@@ -138,3 +138,7 @@ After the collection process, I had 3964 data points for normal track and 4987 d
 I didnt use augmentation technique as I could not use augmentation while training as the `drive.py` will use the model directly
 
 I used this training data for training the model. The validation set helped determine if the model was over or under fitting. The ideal number of epochs was 43 as I used `EarlyStopping` method from `Keras` ... I used an RMSprop optimizer with learning rate of `0.0001`.
+
+### Video
+
+I have saved the videos. `video_track1.mp4` is the track1 video. `video_track2.mp4` is for track 2
