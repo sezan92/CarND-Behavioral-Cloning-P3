@@ -85,21 +85,6 @@ train["Steering"].hist()
 test["Steering"].hist()
 
 
-def resize_image(images, new_size=(128, 128)):
-    new_image_shape = (images.shape[0], new_size[0], new_size[1], images.shape[3])
-    resized_images = np.zeros(shape=new_image_shape)
-    for i, image in enumerate(images):
-        resized_images[i, :, :, :] = cv2.resize(image, new_size)
-    return resized_images
-
-
-def preprocess(images, new_size=(128, 128)):
-    images = images[:, 60:140, :]
-    images = images / 255
-    images = resize_image(images, new_size)
-    return images
-
-
 def read_images(batch):
     images = [None] * len(batch)
     for i, image_name in enumerate(batch):
@@ -169,3 +154,4 @@ history = model.fit_generator(
 plt.plot(history.history["loss"], label="loss")
 plt.plot(history.history["val_loss"], label="val_loss")
 plt.legend()
+plt.show()
